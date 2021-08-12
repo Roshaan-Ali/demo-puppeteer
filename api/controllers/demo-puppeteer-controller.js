@@ -12,7 +12,12 @@ exports.test_puppetter = async (req, res) => {
     try {
         try {
             // launch a new headless browser
-            const browser = await puppeteer.launch();
+            const browser = await puppeteer.launch({
+                args: [
+                  '--no-sandbox',
+                  '--disable-setuid-sandbox',
+                ],
+              });
             // loop over the urls
             for (let i = 0; i < urlsArray.length; i++) {
                 // check for https for safety!
