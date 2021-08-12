@@ -6,13 +6,9 @@ const fs = require('fs');
 
 exports.test_puppetter = async (req, res) => {
     let urlsArray = req.body;
-    let numOfiles;
     fs.readdir('./screenshots', (err, files) => {
-        console.log({ number: files.length });
-        numOfiles = files.length;
         const unlinkPromises = files.map(filename => fs.unlinkSync(path.resolve() + `/screenshots/${filename}`));
     });
-    console.log("=-==",numOfiles)
     try {
         try {
             // launch a new headless browser
