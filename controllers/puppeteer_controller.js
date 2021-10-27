@@ -99,7 +99,7 @@ exports.takeScreenshots = async (req, res) => {
 
         const {urls} = req.body;
 
-
+        console.log(urls);
 
         let imageNames = [];
 
