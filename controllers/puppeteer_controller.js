@@ -137,7 +137,7 @@ exports.takeScreenshots = async (req, res) => {
     
           await browser.close();
 
-          return req.json({
+          return res.json({
               status:true,
               msg: 'Screenshot generated successfully',
               data : {
@@ -147,7 +147,7 @@ exports.takeScreenshots = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        return req.json({
+        return res.json({
             status:false,
             msg: 'Something went wrong',
             data: error
