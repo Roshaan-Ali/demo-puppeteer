@@ -94,7 +94,12 @@ exports.all_images = async (req, res) => {
 exports.takeScreenshots = async (req, res) => {
     
     try {
+
+        console.log('Api call started')
+
         const {urls} = req.body;
+
+
 
         let imageNames = [];
 
@@ -141,6 +146,7 @@ exports.takeScreenshots = async (req, res) => {
           })
 
     } catch (error) {
+        console.log(error);
         return req.json({
             status:false,
             msg: 'Something went wrong',
